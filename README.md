@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
+
 # Bayesian Inference of Neuron Activation Parameters via the Leaky Integrate-and-Fire Model using BayesFlow
 
 ## Overview
