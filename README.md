@@ -112,21 +112,15 @@ This project applies amortized Bayesian inference for parameter estimation in th
 
 ---
 
-## Backend Options
-
-BayesFlow supports three deep learning frameworks:
-
-- **TensorFlow**: Default backend with full feature support
-- **JAX**: Lightweight, functional alternative (recommended for speed)
-- **PyTorch**: Available via custom interface (requires manual setup)
-
----
-
 ## Installation & Backend
 - The dev version is used for this working example:
-'''pip install git+https://github.com/bayesflow-org/bayesflow.git@dev'''
+'''
+pip install git+https://github.com/bayesflow-org/bayesflow.git@dev
+'''
 - The backend used for Keras3 is JAX:
-'''os.environ["KERAS_BACKEND"] = "jax"'''
+'''
+os.environ["KERAS_BACKEND"] = "jax"
+'''
 
 ---
 
