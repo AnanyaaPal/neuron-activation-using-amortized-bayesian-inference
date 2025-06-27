@@ -32,14 +32,6 @@ This project applies amortized Bayesian inference for parameter estimation in th
 
 ### Priors
 
-```math
-\begin{align*}
-\tau &\sim \text{LogNormal}(\mu_{\tau}, \sigma_{\tau}) \\
-V_{\text{rest}} &\sim \mathcal{N}(\mu_r, \sigma_r) \\
-C &\sim \text{LogNormal}(\mu_C, \sigma_C) \\
-V_{\text{th}} &\sim \mathcal{N}(\mu_{\text{th}}, \sigma_{\text{th}})
-\end{align*}
-
 ## Simulator
 
 - **Input**: Sinusoidal or square current waveforms.
