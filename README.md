@@ -127,3 +127,17 @@ BayesFlow supports three deep learning frameworks:
 - **TensorFlow**: Default backend with full feature support
 - **JAX**: Lightweight, functional alternative (recommended for speed)
 - **PyTorch**: Available via custom interface (requires manual setup)
+
+---
+
+## Installation & Backend
+- The dev version is used for this working example:
+'''pip install git+https://github.com/bayesflow-org/bayesflow.git@dev'''
+- The backend used for Keras3 is JAX:
+'''os.environ["KERAS_BACKEND"] = "jax"'''
+
+---
+
+## Documentation
+
+For more details, check out the [BayesFlow Docs](https://bayesflow.org/main/index.html).
