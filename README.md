@@ -11,7 +11,6 @@ This project aims to simplify the complex and extensive Hodgkin–Huxley model t
 ## Model definition
 
 - We define four parameters:
-This section describes the biophysical parameters used in the membrane potential model.
 
 | Parameter               | Symbol        | Description                                                         |
 |-------------------------|---------------|---------------------------------------------------------------------|
@@ -35,6 +34,7 @@ params = {
     "k": 10.0,       # mV
     "V_thr": -50.0   # mV
 }
+```
 
 ## Parameter Tuning 
 
