@@ -1,16 +1,20 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
+<p align="right">
+  <img src="assets/bayesflow_logo.png" alt="BayesFlow Logo" width="120" />
+</p>
+
 
 # Bayesian Inference of Neuron Activation Parameters via Leaky Adaptive Activation (LAA) model usig BayesFlow
 
 ## Overview
 
-This project aims to simplify the complex and extensive Hodgkin–Huxley model to using four parameters and still captures passive integration,leak, and a sharp, threshold-like “activation” event. We name this simplified version as the Leaky Adaptive Activation. 
+This project aims to simplify the complex and extensive Hodgkin–Huxley model to using four parameters and still captures passive integration, leak, and a sharp, threshold-like “activation” event. We name this simplified version as the Leaky Adaptive Activation. 
 
 ---
 
 ## Model definition
 
-- We define four parameters:
+- We define five parameters:
 
 | Parameter               | Symbol        | Description                                                         |
 |-------------------------|---------------|---------------------------------------------------------------------|
@@ -62,6 +66,28 @@ Where:
 \[
 \sigma(x; k) = \frac{1}{1 + \exp(-k x)}
 \]
+
+---
+
+## Motivation  
+Neurons communicate via fast electrical impulses (“spikes”) whose timing and shape underlie all brain function—from sensory perception to decision making. Understanding how biophysical parameters (membrane capacitance, leak conductance, threshold, etc.) shape these voltage‐time trajectories is key for both basic neuroscience and neuromorphic engineering.
+
+--- 
+
+### Problem  
+Classic models like the Leaky Integrate‐and‐Fire (LIF) neuron capture subthreshold integration and spiking with minimal machinery, but rely on a hard, non‐differentiable reset rule. This discontinuity complicates gradient‐based parameter inference and deep learning integration.
+
+---
+
+### Modeling Idea  
+We propose the **Leaky Adaptive Activation (LAA)** model—a fully continuous variant that:  
+1. Retains the passive RC core $(C_m\,dV/dt = -g_L(V-E_L)+I_{\rm ext}$.  
+2. Replaces hard threshold/reset with a sigmoid-gated “activation” current  
+   $
+     I_{\rm act}(V)=g_L\,\sigma(V-V_{\rm thr};k),\quad
+     \sigma(x;k)=\frac{1}{1+e^{-k\,x}}.
+   $
+3. Collapses dozens of Hodgkin–Huxley parameters into just $C_m, g_L, E_L, V_{\rm thr}, k$, producing smooth spike-like excursions and enabling end-to-end differentiable simulation.
 
 ---
 
